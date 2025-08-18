@@ -40,9 +40,13 @@ p {
   margin: 10px auto !important;
 }
 
+.ant-input-affix-wrapper {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
 .bg-blobs {
   background: white;
-  /* کل صفحه سفید */
   position: absolute;
   inset: 0;
   z-index: -1;
