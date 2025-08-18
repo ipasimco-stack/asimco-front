@@ -1,8 +1,8 @@
 // components/TeamSection.tsx
 import React from "react";
 import { Card } from "antd";
-import boyProfile from "../../../public/images/l6ad_u71g_230710.jpg"
-import girlProfile from "../../../public/images/girl-user-profile.jpg"
+import UserProfile from "../../../public/images/user-profile.gif"
+
 import Image, { StaticImageData } from "next/image";
 
 interface TeamMember {
@@ -15,45 +15,45 @@ const teamMembers: TeamMember[] = [
     {
         name: "خلیل بابایی",
         role: "مدیرعامل",
-        image: boyProfile,
+        image: UserProfile,
     },
     {
         name: "هانیه امانی",
         role: "کارشناس فروش",
-        image: girlProfile,
+        image: UserProfile,
     },
     {
         name: "مارال کوشکی",
         role: "کارشناس فروش",
-        image: girlProfile,
+        image: UserProfile,
     },
     {
         name: "هانیه جعفری",
         role: "حسابدار مالی",
-        image: girlProfile,
+        image: UserProfile,
     },
     {
         name: "نیما تاجیک",
         role: "برنامه‌نویس",
-        image: boyProfile,
+        image: UserProfile,
     },
 ];
 
 const TeamSection: React.FC = () => {
     return (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16">
             <div className="max-w-6xl mx-auto px-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                     {teamMembers.map((member, idx) => (
                         <Card
                             key={idx}
                             hoverable
-                            className="text-center p-4 flex flex-col gap-2 shadow-lg rounded-xl"
+                            className="text-center p-4 flex items-center justify-center flex-col gap-2 shadow-lg rounded-xl"
                             cover={
                                 <Image
                                     alt={member.name}
                                     src={member.image}
-                                    className="!w-full !h-[90px]"
+                                    className="!w-[60px] !h-[60px] mt-5"
                                     width={20}
                                     height={20}
                                 />

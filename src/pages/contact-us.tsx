@@ -18,7 +18,7 @@ const ContactPage: React.FC = () => {
             <Divider orientation="left" orientationMargin={0} className="!font-bold">
                 تماس با ما            </Divider>
 
-            <div className="flex justify-center items-center py-16 bg-gray-50">
+            <div className="flex justify-center items-center py-16">
                 <Card className="w-full max-w-2xl p-8 shadow-xl rounded-2xl">
                     <Form
                         form={form}
@@ -89,7 +89,7 @@ const ContactPage: React.FC = () => {
                                 type="primary"
                                 htmlType="submit"
                                 size="large"
-                                className="px-8 rounded-xl"
+                                className="px-8 w-full rounded-xl"
                             >
                                 ارسال
                             </Button>

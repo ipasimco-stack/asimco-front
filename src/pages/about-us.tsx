@@ -26,9 +26,10 @@ function AboutUs() {
 
         <section>
             <div className="flex justify-between items-center my-12">
-                <CyclicalCounter title="فروش موفق" intervalSeconds={30} targetNumber={200} countInterval={3} />
-                <CyclicalCounter title="تعداد کاربران" intervalSeconds={30} targetNumber={200} countInterval={3} />
-                <CyclicalCounter title="چبدونم" intervalSeconds={30} targetNumber={200} countInterval={3} />
+                <CyclicalCounter title="فروش‌های موفق" intervalSeconds={30} targetNumber={1289} countInterval={3} />
+                <CyclicalCounter title="تعداد کاربران فعال" intervalSeconds={30} targetNumber={471} countInterval={3} />
+                <CyclicalCounter title="پروژه‌های تکمیل‌شده" intervalSeconds={30} targetNumber={307} countInterval={3} />
+
             </div>
         </section>
 

@@ -10,10 +10,10 @@ export const Header = () => {
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
     const categories = [
-        { name: "انواع CPU", items: ["Intel i9", "Intel i7", "AMD Ryzen 9", "AMD Ryzen 7"] },
-        { name: "انواع RAM", items: ["DDR4 16GB", "DDR4 32GB", "DDR5 64GB"] },
-        { name: "انواع Hard", items: ["SSD NVMe", "HDD 2TB", "Enterprise SSD"] },
-        { name: "انواع Server", items: ["Server G10", "Server G9", "Server G8"] },
+        { name: "انواع CPU", items: ["Intel i9", "Intel i7", "AMD Ryzen 9", "AMD Ryzen 7", "AMD Ryzen 9", "AMD Ryzen 7"] },
+        { name: "انواع RAM", items: ["DDR4 16GB", "DDR4 32GB", "DDR5 64GB", "DDR4 16GB", "DDR4 32GB", "DDR5 64GB"] },
+        // { name: "انواع Hard", items: ["SSD NVMe", "HDD 2TB", "Enterprise SSD", "SSD NVMe", "HDD 2TB", "Enterprise SSD"] },
+        // { name: "انواع Server", items: ["Server G10", "Server G9", "Server G8", "Server G10", "Server G9", "Server G8"] },
     ];
 
     const [pages, setPages] = useState([
@@ -61,8 +61,8 @@ export const Header = () => {
                                 placement="bottomLeft"
                                 trigger={["click"]}
                                 dropdownRender={() => (
-                                    <div className="bg-white shadow-xl rounded-xl p-4 w-[600px] flex">
-                                        <div className="w-1/3 border-r">
+                                    <div className="bg-white rounded-xl p-4 w-[600px] mt-4 flex" style={{ boxShadow: "0 0 20px 0px #efefef" }}>
+                                        <div className="w-1/3 border-l-1 border-[#0505050f]">
                                             {categories.map((cat) => (
                                                 <div
                                                     key={cat.name}
