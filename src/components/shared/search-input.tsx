@@ -20,7 +20,7 @@ export const SearchInput = () => {
                 type="text"
                 value={searchValue}
                 onChange={handleChange}
-                className="border-none border-l-1 border-[#05050524] border-solid outline-none placeholder:text-black placeholder:text-sm bg-transparent !w-[90%]"
+                className="border-none border-l-1 border-[#05050524] border-solid outline-none placeholder:text-black placeholder:text-sm bg-transparent !w-[92%]"
                 placeholder="جست‌وجو..."
             />
             <div className="w-[7%] cursor-pointer flex justify-center items-center">

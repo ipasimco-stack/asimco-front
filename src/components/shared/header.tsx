@@ -20,8 +20,8 @@ export const Header = () => {
         { title: "استعلام قیمت", route: "/" },
         { title: "مقالات", route: "/" },
         { title: "نمایندگان کارا شبکه آسیم", route: "/" },
-        { title: "تماس با ما", route: "/" },
-        { title: "درباره ما", route: "/" }
+        { title: "تماس با ما", route: "/contact-us" },
+        { title: "درباره ما", route: "/about-us" }
     ])
 
     return <header className="header shadow-header

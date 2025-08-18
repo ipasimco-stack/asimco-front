@@ -6,7 +6,7 @@ import { Header } from "../components/shared/header";
 export default function App({ Component, pageProps }: AppProps) {
   return <>
     <Header />
-    <div className="c_container">
+    <div className="c_container !mt-12">
       <Component {...pageProps} />
     </div>
   </>
