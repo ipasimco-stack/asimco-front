@@ -1,6 +1,26 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+@font-face {
+  font-family: "Vazir-FD";
+  src: url("../../public/woff/Vazir-FD.woff") format("woff");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--black_base);
+  font-family: Vazir-FD !important;
+}
+
+* {
+  font-family: Vazir-FD !important;
 }
