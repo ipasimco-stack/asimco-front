@@ -24,7 +24,8 @@ export const Header = () => {
         { title: "درباره ما", route: "/" }
     ])
 
-    return <header className="header shadow-header">
+    return <header className="header shadow-header
+    ">
         <div className="">
             <div className="c_container flex justify-between items-center ">
                 <div>
