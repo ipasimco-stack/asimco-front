@@ -3,8 +3,10 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/_components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/_components/public/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}", 
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/public/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -13,10 +15,7 @@ const config: Config = {
         xs: { max: "640px" },
       },
       colors: {
-        secondary_black: "#292a38",
-        black_base: "#242532",
-        third_black: "#2f3041",
-        primary_base: "#246aed",
+        primary_orange: "#EA580C"
       },
       fontFamily: {
         vazir: ["Vazir", "sans-serif"],
@@ -27,9 +26,6 @@ const config: Config = {
       },
       container: {
         center: true,
-        screens: {
-          DEFAULT: "85%",
-        },
       },
     },
   },
