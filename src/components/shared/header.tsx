@@ -43,7 +43,9 @@ export const Header = () => {
                 </div>
                 <div className="flex items-center gap-3">
                     <Button >
-                        ورود / ثبت نام
+                        <Link href={'/auth'}>
+                            ورود / ثبت نام
+                        </Link>
                     </Button>
 
                     <Button variant="outline">
