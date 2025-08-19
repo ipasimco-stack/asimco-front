@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
-import searchIcon from "../../../public/icons/search-orange-icon.png";
+import searchIcon from "../../../public/images/search-2.png";
 
 export const SearchInput = () => {
     const [searchValue, setSearchValue] = useState("");
@@ -27,8 +27,8 @@ export const SearchInput = () => {
                 <Image
                     src={searchIcon}
                     className=""
-                    width={25}
-                    height={25}
+                    width={20}
+                    height={20}
                     alt="search icon / آیکون سرچ"
                     onClick={handleSearchClick}
                 />
