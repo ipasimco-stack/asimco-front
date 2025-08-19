@@ -3,36 +3,36 @@ import Image from "next/image";
 import searchIcon from "../../../public/images/search-2.png";
 
 export const SearchInput = () => {
-    const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState("");
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchValue(e.target.value);
-        console.log(e.target.value);
-    };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+    console.log(e.target.value);
+  };
 
-    const handleSearchClick = () => {
-        console.log("Search for:", searchValue);
-    };
+  const handleSearchClick = () => {
+    console.log("Search for:", searchValue);
+  };
 
-    return (
-        <div className="flex justify-between items-center bg-[#f9f9f9] rounded-lg p-2 py-3">
-            <input
-                type="text"
-                value={searchValue}
-                onChange={handleChange}
-                className="border-none border-l-1 border-[#05050524] border-solid outline-none placeholder:text-black placeholder:text-sm bg-transparent !w-[92%]"
-                placeholder="جست‌وجو..."
-            />
-            <div className="w-[7%] cursor-pointer flex justify-center items-center">
-                <Image
-                    src={searchIcon}
-                    className=""
-                    width={20}
-                    height={20}
-                    alt="search icon / آیکون سرچ"
-                    onClick={handleSearchClick}
-                />
-            </div>
-        </div>
-    );
+  return (
+    <div className="flex justify-between items-center bg-[#f4f4f4] rounded-lg p-2 py-3">
+      <input
+        type="text"
+        value={searchValue}
+        onChange={handleChange}
+        className="border-none border-l-1 border-[#05050524] border-solid outline-none placeholder:text-black placeholder:text-sm bg-transparent !w-[92%]"
+        placeholder="جست‌وجو..."
+      />
+      <div className="w-[7%] cursor-pointer flex justify-center items-center">
+        <Image
+          src={searchIcon}
+          className=""
+          width={20}
+          height={20}
+          alt="search icon / آیکون سرچ"
+          onClick={handleSearchClick}
+        />
+      </div>
+    </div>
+  );
 };
