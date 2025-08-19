@@ -33,6 +33,35 @@ function AboutUs() {
             </div>
         </section>
 
+        <section className="my-16">
+            <Divider orientation="left" orientationMargin={0} className="!font-bold">
+                خدمات ما
+            </Divider>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-8">
+                {[
+                    { title: "مشاوره، طراحی و پیاده سازی شبکه", icon: "🖧" },
+                    { title: "تامین تجهیزات سخت افزاری شبکه", icon: "💻" },
+                    { title: "میزبانی وب در بهترین دیتاسنترها", icon: "☁️" },
+                    { title: "طراحی انواع وب سایت", icon: "🌐" },
+                    { title: "ثبت انواع دامنه های ملی و بین المللی", icon: "📛" },
+                    { title: "ارائه سرورهای اختصاصی و مجازی", icon: "🖥️" },
+                ].map((service, index) => (
+                    <div
+                        key={index}
+                        className="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center text-center hover:shadow-2xl transition"
+                    >
+                        <div className="text-4xl mb-4">{service.icon}</div>
+                        <h3 className="font-bold text-lg mb-2">{service.title}</h3>
+                        <p className="text-gray-600 text-sm">
+                            ارائه بهترین راهکارها و خدمات با استانداردهای بین‌المللی
+                        </p>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+
         <section>
             <Divider orientation="left" orientationMargin={0} className="!font-bold">
                 همکاران ما در آسیم
