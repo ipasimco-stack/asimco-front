@@ -3,9 +3,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import Image from "next/image";
 import server_image from "../../public/images/server-3.png"
+import arrow_down from "../../public/images/double-down-arrow.png";
 
 const categories = [
   {
@@ -53,7 +54,12 @@ export default function HomePage() {
           <div className="absolute w-48 h-48 bg-indigo-500 rounded-full opacity-25 animate-blob animation-delay-4000 bottom-10 left-1/3"></div>
         </div>
 
+
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-6 md:px-16 max-w-7xl mx-auto">
+
+          <div className="absolute bottom-0 left-1/2">
+            <Image src={arrow_down} width={80} height={80} alt="arrow-down" />
+          </div>
 
           <div className="space-y-8 text-center md:text-right">
             <h1 className="text-4xl md:text-6xl font-extrabold drop-shadow-lg animate-fadeIn leading-snug">
@@ -113,7 +119,7 @@ export default function HomePage() {
               modules={[Autoplay]}
               spaceBetween={20}
               slidesPerView={1}
-              autoplay={{ delay: 5000 }}
+              autoplay={{ delay: 4000 }}
               breakpoints={{
                 640: { slidesPerView: 2 },
                 768: { slidesPerView: 3 },

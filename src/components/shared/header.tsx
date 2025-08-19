@@ -6,6 +6,7 @@ import { useState } from "react";
 import { SearchInput } from "./search-input";
 import Button from "./button";
 import { v4 as uuidv4 } from 'uuid';
+import arrow_down from "../../../public/images/down-arrow.png";
 
 
 export const Header = () => {
@@ -110,8 +111,9 @@ export const Header = () => {
                                         </div>
                                     )}
                                 >
-                                    <div className="cursor-pointer">
-                                        محصولات
+                                    <div className="cursor-pointer flex items-center gap-1 flex-row-reverse">
+                                        <Image src={arrow_down} alt="arrow_down" width={10} height={10} className="mr-[2px]" />
+                                        <p>محصولات</p>
                                     </div>
                                 </Dropdown>
                             </li>
