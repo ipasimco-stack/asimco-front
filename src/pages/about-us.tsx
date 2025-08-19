@@ -4,7 +4,7 @@ import CyclicalCounter from "@/utils/cyclical-counter";
 import TeamSection from "@/components/about-us/team-box";
 
 function AboutUs() {
-    return <div className="">
+    return <div className="c_container !mt-[220px]">
         <section>
             <div>
                 <Divider orientation="left" orientationMargin={0} className="!font-bold">

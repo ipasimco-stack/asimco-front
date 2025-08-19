@@ -20,7 +20,7 @@ export const Header = () => {
 
     const [pages, setPages] = useState([
         { title: "استعلام قیمت", route: "/" },
-        { title: "مقالات", route: "/" },
+        // { title: "مقالات", route: "/" },
         { title: "نمایندگان کارا شبکه آسیم", route: "/representatives" },
         { title: "تماس با ما", route: "/contact-us" },
         { title: "درباره ما", route: "/about-us" }
@@ -60,6 +60,11 @@ export const Header = () => {
                 <div className="c_container">
                     <div className="flex justify-between items-center">
                         <ul className="flex items-center gap-10">
+                            <li>
+                                <Link href={"/"}>
+                                    صفحه اصلی
+                                </Link>
+                            </li>
                             <li>
                                 <Dropdown
                                     placement="bottomLeft"

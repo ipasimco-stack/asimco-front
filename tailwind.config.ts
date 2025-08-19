@@ -15,7 +15,7 @@ const config: Config = {
         xs: { max: "640px" },
       },
       colors: {
-        primary_orange: "#EA580C"
+        primary_purple: "#EA580C"
       },
       fontFamily: {
         vazir: ["Vazir", "sans-serif"],

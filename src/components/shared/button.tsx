@@ -20,9 +20,9 @@ export default function Button({
       className={clsx(
         "px-6 !w-max !text-sm py-2 rounded-md font-medium transition-colors duration-200",
         variant === "solid" &&
-          "bg-orange-500 !text-white hover:bg-orange-600 active:bg-orange-700",
+          "bg-purple-500 !text-white hover:bg-purple-600 active:bg-purple-700",
         variant === "outline" &&
-          "border-2 !text-orange-500 border-orange-500 text-orange-500 hover:bg-orange-50 active:bg-orange-100",
+          "border-2 !text-purple-500 border-purple-500 text-purple-500 hover:bg-purple-50 active:bg-purple-100",
         className
       )}
     >

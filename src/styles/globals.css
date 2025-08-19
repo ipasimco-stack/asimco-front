@@ -58,7 +58,7 @@ ul {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 0% 40%, rgba(255, 165, 0, 0.2), transparent 10%),
-    radial-gradient(circle at 100% 50%, rgba(255, 140, 0, 0.15), transparent 10%),
-    radial-gradient(circle at 50% 90%, rgba(255, 140, 0, 0.15), transparent 10%),
+    radial-gradient(circle at 0% 30%, rgba(170, 0, 255, 0.131), transparent 10%),
+    radial-gradient(circle at 100% 50%, rgba(170, 0, 255, 0.131), transparent 10%),
+    radial-gradient(circle at 50% 90%, rgba(170, 0, 255, 0.131), transparent 10%),
 }

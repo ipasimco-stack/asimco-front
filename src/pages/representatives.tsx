@@ -1,6 +1,5 @@
 import { Divider } from "antd";
 import Marquee from "react-fast-marquee";
-import FakeImage from '../../public/images/user-profile.gif'
 import Image from "next/image";
 
 export default function Representatives() {
@@ -38,7 +37,7 @@ export default function Representatives() {
     ];
 
     return (
-        <div className="">
+        <div className="c_container !mt-[220px]">
             <Divider orientation="left" orientationMargin={0} className="!font-bold !mb-10">
                 نمایندگان رسمی شرکت
             </Divider>
@@ -74,7 +73,7 @@ export default function Representatives() {
                     >
                         <h2 className="text-lg font-bold mb-2">{rep.name}</h2>
                         <p className="text-gray-700 mb-2">{rep.address}</p>
-                        <p className="text-orange-600 font-semibold">{rep.phone}</p>
+                        <p className="text-purple-600 font-semibold">{rep.phone}</p>
                     </div>
                 ))}
             </div>
