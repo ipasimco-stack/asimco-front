@@ -42,13 +42,13 @@ const teamMembers: TeamMember[] = [
 const TeamSection: React.FC = () => {
     return (
         <section className="py-16">
-            <div className="max-w-6xl mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                     {teamMembers.map((member, idx) => (
                         <Card
                             key={idx}
                             hoverable
-                            className="text-center p-4 flex items-center justify-center flex-col gap-2 shadow-lg rounded-xl"
+                            className="text-center p-4 flex items-center justify-center flex-col shadow-lg rounded-xl"
                             cover={
                                 <Image
                                     alt={member.name}

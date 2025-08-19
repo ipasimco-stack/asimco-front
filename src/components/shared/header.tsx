@@ -5,27 +5,28 @@ import Link from "next/link";
 import { useState } from "react";
 import { SearchInput } from "./search-input";
 import Button from "./button";
+import { v4 as uuidv4 } from 'uuid';
+
 
 export const Header = () => {
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
     const categories = [
-        { name: "انواع CPU", items: ["Intel i9", "Intel i7", "AMD Ryzen 9", "AMD Ryzen 7", "AMD Ryzen 9", "AMD Ryzen 7"] },
-        { name: "انواع RAM", items: ["DDR4 16GB", "DDR4 32GB", "DDR5 64GB", "DDR4 16GB", "DDR4 32GB", "DDR5 64GB"] },
-        // { name: "انواع Hard", items: ["SSD NVMe", "HDD 2TB", "Enterprise SSD", "SSD NVMe", "HDD 2TB", "Enterprise SSD"] },
-        // { name: "انواع Server", items: ["Server G10", "Server G9", "Server G8", "Server G10", "Server G9", "Server G8"] },
+        { name: "انواع CPU", items: ["Intel i9", "Intel i7", "AMD Ryzen 9", "AMD Ryzen 7", "AMD Ryzen 9", "AMD Ryzen 7", "AMD Ryzen 7", "AMD Ryzen 9", "AMD Ryzen 7"] },
+        { name: "انواع RAM", items: ["DDR4 16GB", "DDR4 32GB", "DDR5 64GB", "DDR4 16GB", "DDR4 32GB", "DDR5 64GB", "DDR4 32GB", "DDR5 64GB", "DDR4 16GB", "DDR4 32GB", "DDR5 64GB"] },
+        { name: "انواع Hard", items: ["SSD NVMe", "HDD 2TB", "Enterprise SSD", "SSD NVMe", "HDD 2TB", "Enterprise SSD", "Enterprise SSD", "SSD NVMe", "HDD 2TB", "Enterprise SSD"] },
+        { name: "انواع Server", items: ["Server G10", "Server G9", "Server G8", "Server G10", "Server G9", "Server G8", "Server G8", "Server G10", "Server G9", "Server G8"] },
     ];
 
     const [pages, setPages] = useState([
         { title: "استعلام قیمت", route: "/" },
         { title: "مقالات", route: "/" },
-        { title: "نمایندگان کارا شبکه آسیم", route: "/" },
+        { title: "نمایندگان کارا شبکه آسیم", route: "/representatives" },
         { title: "تماس با ما", route: "/contact-us" },
         { title: "درباره ما", route: "/about-us" }
     ])
 
-    return <header className="header shadow-header
-    ">
+    return <header className="header shadow-header fixed w-full top-0 z-[99999] bg-white" style={{ boxShadow: "rgb(0 0 0 / 13%) 0px 2px 20px 0px" }}>
         <div className="">
             <div className="c_container flex justify-between items-center ">
                 <div>
@@ -42,7 +43,7 @@ export const Header = () => {
                 </div>
                 <div className="flex items-center gap-3">
                     <Button >
-                        خرید سرور hp
+                        ورود / ثبت نام
                     </Button>
 
                     <Button variant="outline">
@@ -53,66 +54,74 @@ export const Header = () => {
             <Divider />
         </div>
         <div>
-            <div className="pt-4">
+            <div className="pt-4 pb-5">
                 <div className="c_container">
-                    <ul className="flex items-center gap-10">
-                        <li>
-                            <Dropdown
-                                placement="bottomLeft"
-                                trigger={["click"]}
-                                dropdownRender={() => (
-                                    <div className="bg-white rounded-xl p-4 w-[600px] mt-4 flex" style={{ boxShadow: "0 0 20px 0px #efefef" }}>
-                                        <div className="w-1/3 border-l-1 border-[#0505050f]">
-                                            {categories.map((cat) => (
-                                                <div
-                                                    key={cat.name}
-                                                    onMouseEnter={() => setSelectedCategory(cat.name)}
-                                                    className={`p-2 cursor-pointer hover:bg-gray-100 ${selectedCategory === cat.name ? "font-bold text-blue-600" : ""
-                                                        }`}
-                                                >
-                                                    {cat.name}
-                                                </div>
-                                            ))}
-                                        </div>
+                    <div className="flex justify-between items-center">
+                        <ul className="flex items-center gap-10">
+                            <li>
+                                <Dropdown
+                                    placement="bottomLeft"
+                                    trigger={["click"]}
+                                    onOpenChange={(open) => {
+                                        if (!open) setSelectedCategory(null);
+                                    }}
+                                    dropdownRender={() => (
+                                        <div className="bg-white rounded-xl p-4 w-[800px] mt-8 flex" style={{ boxShadow: "0 0 20px 0px #efefef" }}>
+                                            <div className="w-1/3 border-l-1 flex flex-col gap-2 border-[#0505050f]">
+                                                {categories.map((cat, i) => (
+                                                    <div
+                                                        key={`${cat.name}-${i + 1}`}
+                                                        onMouseEnter={() => setSelectedCategory(cat.name)}
+                                                        className={`p-2 cursor-pointer hover:bg-gray-100 ${selectedCategory === cat.name ? "font-bold bg-gray-100 text-blue-600" : ""
+                                                            }`}
+                                                    >
+                                                        {cat.name}
+                                                    </div>
+                                                ))}
+                                            </div>
 
-                                        <div className="w-2/3 pl-4">
-                                            {selectedCategory ? (
-                                                <ul className="grid grid-cols-2 gap-2">
-                                                    {categories
-                                                        .find((c) => c.name === selectedCategory)
-                                                        ?.items.map((item) => (
-                                                            <li
-                                                                key={item}
-                                                                className="p-2 cursor-pointer hover:bg-gray-100 rounded"
-                                                            >
-                                                                {item}
-                                                            </li>
-                                                        ))}
-                                                </ul>
-                                            ) : (
-                                                <div className="text-gray-400 flex items-center justify-center h-full">
-                                                    یک دسته‌بندی انتخاب کنید
-                                                </div>
-                                            )}
+                                            <div className="w-2/3 pr-4">
+                                                {selectedCategory ? (
+                                                    <ul className="grid grid-cols-3 gap-2">
+                                                        {categories
+                                                            .find((c) => c.name === selectedCategory)
+                                                            ?.items.map((item) => (
+                                                                <li
+                                                                    key={`${selectedCategory}-${item}-${uuidv4()}`}
+                                                                    className="p-2 cursor-pointer text-center hover:bg-gray-100 rounded"
+                                                                >
+                                                                    {item}
+                                                                </li>
+                                                            ))}
+                                                    </ul>
+                                                ) : (
+                                                    <div className="text-gray-400 flex items-center justify-center h-full">
+                                                        یک دسته‌بندی انتخاب کنید
+                                                    </div>
+                                                )}
+                                            </div>
                                         </div>
+                                    )}
+                                >
+                                    <div className="cursor-pointer">
+                                        محصولات
                                     </div>
-                                )}
-                            >
-                                <div className="cursor-pointer">
-                                    محصولات
-                                </div>
-                            </Dropdown>
-                        </li>
-                        {
-                            pages.map((page) => {
-                                return <li>
-                                    <Link href={page.route}>
-                                        {page.title}
-                                    </Link>
-                                </li>
-                            })
-                        }
-                    </ul>
+                                </Dropdown>
+                            </li>
+                            {
+                                pages.map((page) => {
+                                    return <li>
+                                        <Link href={page.route}>
+                                            {page.title}
+                                        </Link>
+                                    </li>
+                                })
+                            }
+                        </ul>
+                        <div>
+                            <p>021-22889922</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -7,10 +7,10 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Header />
-      <div className="relative !mt-12">
+      <div className="relative !mt-[220px]">
         <div className="bg-blobs"></div>
 
-        <div className="c_container relative z-10">
+        <div className="c_container relative">
           <Component {...pageProps} />
         </div>
       </div>

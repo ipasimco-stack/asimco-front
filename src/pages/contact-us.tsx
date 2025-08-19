@@ -14,7 +14,41 @@ const ContactPage: React.FC = () => {
     };
 
     return (
-        <section className="w-full min-h-screen px-6">
+        <section className="w-full min-h-screen">
+            <Divider orientation="left" orientationMargin={0} className="!font-bold !mb-10">
+                اطلاعات تماس
+            </Divider>
+            <div className="mb-[50px] flex flex-row-reverse items-start justify-between">
+                <iframe
+                    width="100%"
+                    height="450"
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps?q=35.71928811105581,51.40628398972318&hl=fa&z=18&output=embed"
+                    className=""
+                ></iframe>
+
+                <div className="w-full bg-gray-100 rounded-t-r-xl h-[450px] pt-0 pl-0 p-6 text-right flex flex-col items-center justify-center gap-10">
+                    <p className="mb-2 text-center">
+                        <span className="font-semibold">آدرس</span><br /><br />
+                        تهران، میدان جهاد (فاطمی)، خیابان جویبار
+                    </p>
+
+                    <p className="mb-2 text-center">
+                        <span className="font-semibold">تلفن ثابت</span><br /><br />
+                        ۰۲۱۸۸۸۰۳۵۶۸ <br />
+                        ۰۲۱۹۱۰۰۱۳۷۲
+                    </p>
+
+                    <p className="text-center">
+                        <span className="font-semibold">همراه</span><br /><br />
+                        ۰۹۲۲۱۵۳۵۹۱۳
+                    </p>
+                </div>
+            </div>
+
+
             <Divider orientation="left" orientationMargin={0} className="!font-bold !mb-12">
                 تماس با ما
             </Divider>

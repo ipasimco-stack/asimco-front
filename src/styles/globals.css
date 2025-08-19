@@ -25,7 +25,8 @@ body {
   font-family: Vazir-FD !important;
 }
 
-p {
+p,
+ul {
   margin: 0 !important;
 }
 
@@ -59,5 +60,5 @@ p {
   background:
     radial-gradient(circle at 0% 20%, rgba(255, 165, 0, 0.2), transparent 10%),
     radial-gradient(circle at 100% 50%, rgba(255, 140, 0, 0.15), transparent 10%),
-    radial-gradient(circle at 50% 50%, rgba(255, 140, 0, 0.15), transparent 10%),
+    radial-gradient(circle at 50% 90%, rgba(255, 140, 0, 0.15), transparent 10%),
 }
