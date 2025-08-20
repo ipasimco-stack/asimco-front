@@ -18,7 +18,7 @@ export default function Button({
     <button
       onClick={onClick}
       className={clsx(
-        "px-6 !w-max !text-sm py-2 rounded-md font-medium transition-colors duration-200",
+        "px-6 !w-max !text-sm py-3 rounded-md font-medium transition-colors duration-200",
         variant === "solid" &&
           "bg-purple-500 !text-white hover:bg-purple-600 active:bg-purple-700",
         variant === "outline" &&

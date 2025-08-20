@@ -5,6 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import type { AppProps } from "next/app"
 import { Header } from "../components/shared/header"
+import Footer from "@/components/shared/footer";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -17,6 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </div>
       </div>
+      <Footer />
     </>
   )
 }

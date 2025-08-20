@@ -7,6 +7,10 @@ import { Autoplay } from "swiper/modules";
 import Image from "next/image";
 import server_image from "../../public/images/server-3.png";
 import arrow_down from "../../public/images/double-down-arrow.png";
+import server_box from "../../public/images/box-server-2.png"
+import { Divider, Tabs, TabsProps, theme } from "antd";
+import StickyBox from 'react-sticky-box';
+import { v4 as uuidv4 } from 'uuid';
 
 const categories = [
   {
@@ -38,37 +42,7 @@ const categories = [
       "DDR4 16GB",
       "DDR4 32GB",
     ],
-  },
-  {
-    name: "انواع Hard",
-    items: [
-      "SSD NVMe",
-      "HDD 2TB",
-      "Enterprise SSD",
-      "SSD NVMe",
-      "HDD 2TB",
-      "Enterprise SSD",
-      "Enterprise SSD",
-      "SSD NVMe",
-      "HDD 2TB",
-      "Enterprise SSD",
-    ],
-  },
-  {
-    name: "انواع Server",
-    items: [
-      "Server G10",
-      "Server G9",
-      "Server G8",
-      "Server G10",
-      "Server G9",
-      "Server G8",
-      "Server G8",
-      "Server G10",
-      "Server G9",
-      "Server G8",
-    ],
-  },
+  }
 ];
 
 const features = [
@@ -113,8 +87,58 @@ const faqs = [
   },
 ];
 
+const products1 = [
+  { name: "Intel Xeon", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
+  { name: "AMD EPYC", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
+  { name: "Ryzen 9", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
+  { name: "Intel Xeon", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
+  { name: "AMD EPYC", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
+  { name: "Ryzen 9", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
+  { name: "Intel Xeon", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
+  { name: "AMD EPYC", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
+  { name: "Ryzen 9", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
+];
+
+const products2 = [
+  { name: "SSD NVMe", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
+  { name: "HDD 4TB", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
+  { name: "Enterprise SSD", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
+];
+
+const AnimatedCTA = ({ gradient }: { gradient?: "a" | "b" }) => (
+  <a href="/products" className="group relative inline-flex items-center justify-center rounded-xl p-[2px] overflow-hidden">
+    <span
+      className={`pointer-events-none absolute inset-[-150%] rounded-xl ${gradient === "b"
+        ? "bg-[conic-gradient(from_0deg,_#6366f1_0%,_#a855f7_40%,_#ec4899_70%,_#6366f1_100%)]"
+        : "bg-[conic-gradient(from_0deg,_#a78bfa_0%,_#f472b6_50%,_#818cf8_100%)]"
+        } animate-spin-slow`}
+    />
+    <span
+      className="relative z-10 rounded-[10px] px-7 py-4 !font-bold text-white shadow-lg 
+                   bg-gradient-to-r from-purple-600 via-fuchsia-600 to-indigo-600 
+                   bg-[length:200%_200%] animate-gradient-move"
+    >
+      مشاهده محصولات
+      <span className="pointer-events-none absolute -left-10 top-0 h-full w-10 skew-x-12 bg-white/25 blur-sm opacity-0 group-hover:opacity-100 group-hover:animate-sheen" />
+    </span>
+    <span className="relative z-0 block rounded-xl bg-purple-900/20 backdrop-blur-md" />
+  </a>
+);
+
+
+
 export default function HomePage() {
   const [activeFAQ, setActiveFAQ] = useState<number | null>(null);
+
+
+  const {
+    token: { colorBgContainer },
+  } = theme.useToken();
+  const renderTabBar: TabsProps['renderTabBar'] = (props, DefaultTabBar) => (
+    <StickyBox offsetTop={64} offsetBottom={20} style={{ zIndex: 1 }}>
+      <DefaultTabBar {...props} style={{ background: colorBgContainer }} />
+    </StickyBox>
+  );
 
   return (
     <div className="w-full">
@@ -131,10 +155,8 @@ export default function HomePage() {
           </div>
 
           <div className="space-y-8 text-center md:text-right w-full">
-            <h1 className="text-4xl md:text-6xl font-black drop-shadow-lg animate-fadeIn w-max leading-snug">
-              تجهیزات شبکه و سرور را با خیال راحت
-              <br />
-              خرید کنید
+            <h1 className="text-4xl md:text-6xl font-black drop-shadow-lg animate-fadeIn leading-snug">
+              تجهیزات شبکه و سرور را با خیال راحت خرید کنید
             </h1>
 
             <p className="text-lg md:text-xl text-purple-100 animate-fadeIn text-justify leading-10 delay-500">
@@ -214,7 +236,141 @@ export default function HomePage() {
       <section className="px-6 md:px-16 py-12 space-y-12 bg-purple-100">
         {categories.map((cat, i) => (
           <div key={i} className="space-y-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-purple-900">
+            <h2 className="text-2xl !mb-8 md:text-3xl font-bold text-purple-900">
+              {cat.name}
+            </h2>
+            <Swiper
+              modules={[Autoplay]}
+              spaceBetween={20}
+              slidesPerView={1}
+              autoplay={{ delay: 4000 }}
+              breakpoints={{
+                640: { slidesPerView: 2 },
+                768: { slidesPerView: 3 },
+                1024: { slidesPerView: 4 },
+              }}
+            >
+              {cat.items.map((item, j) => (
+                <SwiperSlide key={j}>
+                  <div className="bg-white shadow-md rounded-2xl cursor-pointer p-4 text-center hover:shadow-xl transition">
+                    <img
+                      src={`https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp`}
+                      alt={item}
+                      className="h-24 md:h-32 object-contain mx-auto mb-2"
+                    />
+                    <div className="font-semibold text-purple-900">{item}</div>
+                    <p className="text-gray-500 text-sm !mt-3">
+                      محصول با کیفیت برای استفاده در سرورها و ورک‌استیشن‌ها.
+                    </p>
+                    <p className="text-purple-800 text-center !mt-4 font-bold">
+                      1.300.000 تومان
+                    </p>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        ))}
+      </section>
+
+      <section className="px-6 md:px-16 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 mt-[130px]">
+        <div className="bg-gradient-to-br from-purple-600 via-purple-700 to-purple-900 text-white rounded-2xl shadow-lg p-6 flex flex-col">
+          <div className="flex items-center flex-row-reverse justify-between gap-4 !mb-12 pl-8 !mt-[-100px]">
+            <Image
+              src={server_box}
+              alt="CPU"
+              width={200}
+              height={200}
+            />
+            <div>
+              <h2 className="text-4xl !font-black !mb-12">پردازنده‌ها (CPU)</h2>
+              <div className="">
+                <AnimatedCTA gradient="a" />
+              </div>
+            </div>
+          </div>
+          <div className="!w-full">
+
+            <Swiper
+              modules={[Autoplay]}
+              spaceBetween={20}
+              slidesPerView={1}
+              autoplay={{ delay: 2000 }}
+              breakpoints={{
+                640: { slidesPerView: 2 },
+                768: { slidesPerView: 3 },
+                1024: { slidesPerView: 3 },
+              }}
+            >
+              {products1.map((p, i) => (
+                <SwiperSlide key={i} className="bg-white rounded-lg cursor-pointer">
+                  <div className="!text-purple-900 rounded-xl shadow-md p-4 flex flex-col items-center">
+                    <img src={p.img} alt={p.name} className="h-20 mb-3" />
+                    <h3 className="font-semibold">{p.name}</h3>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-br from-purple-600 via-purple-700 to-purple-900 text-white rounded-2xl shadow-lg p-6 flex flex-col">
+          <div className="flex items-center flex-row-reverse justify-between gap-4 !mb-12 pl-8 !mt-[-100px]">
+            <Image
+              src={server_box}
+              alt="CPU"
+              width={200}
+              height={200}
+            />
+            <div>
+              <h2 className="text-4xl !font-black !mb-12">پردازنده‌ها (CPU)</h2>
+              <div className="">
+                <AnimatedCTA gradient="a" />
+              </div>
+            </div>
+          </div>
+          <div className="!w-full">
+
+            <Swiper
+              modules={[Autoplay]}
+              spaceBetween={20}
+              slidesPerView={1}
+              autoplay={{ delay: 2000 }}
+              breakpoints={{
+                640: { slidesPerView: 2 },
+                768: { slidesPerView: 3 },
+                1024: { slidesPerView: 3 },
+              }}
+            >
+              {products1.map((p, i) => (
+                <SwiperSlide key={i} className="bg-white rounded-lg cursor-pointer">
+                  <div className="!text-purple-900 rounded-xl shadow-md p-4 flex flex-col items-center">
+                    <img src={p.img} alt={p.name} className="h-20 mb-3" />
+                    <h3 className="font-semibold">{p.name}</h3>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+      </section>
+
+      <section className="c_container !my-12">
+        <Divider orientation="left" orientationMargin={0} className="!font-bold">
+          کانفیگ ها
+        </Divider>
+
+        <Tabs defaultActiveKey="1" className="!mt-12" renderTabBar={renderTabBar} items={[{
+          label: `کانفیگ اول`,
+          key: uuidv4(),
+          children: `تست متن تب`,
+        }]} />
+      </section>
+
+      <section className="px-6 md:px-16 py-12 space-y-12 bg-purple-100">
+        {categories.map((cat, i) => (
+          <div key={i} className="space-y-4">
+            <h2 className="text-2xl !mb-8 md:text-3xl font-bold text-purple-900">
               {cat.name}
             </h2>
             <Swiper
@@ -277,22 +433,6 @@ export default function HomePage() {
               {f.title}
             </h3>
             <p className="text-gray-500 text-sm">{f.desc}</p>
-          </div>
-        ))}
-      </section>
-
-      <section className="px-6 md:px-16 py-12 bg-purple-100 space-y-6">
-        <h2 className="text-3xl font-bold text-purple-900 text-center mb-6">
-          سوالات متداول
-        </h2>
-        {faqs.map((faq, i) => (
-          <div
-            key={i}
-            className="bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition"
-            onClick={() => setActiveFAQ(activeFAQ === i ? null : i)}
-          >
-            <h3 className="font-semibold text-purple-900 text-lg">{faq.q}</h3>
-            {activeFAQ === i && <p className="mt-2 text-gray-600">{faq.a}</p>}
           </div>
         ))}
       </section>
