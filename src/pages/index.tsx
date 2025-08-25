@@ -100,12 +100,6 @@ const products1 = [
   { name: "Ryzen 9", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
 ];
 
-const products2 = [
-  { name: "SSD NVMe", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
-  { name: "HDD 4TB", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
-  { name: "Enterprise SSD", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
-];
-
 const AnimatedCTA = ({ gradient }: { gradient?: "a" | "b" }) => (
   <a href="/products" className="group relative inline-flex items-center justify-center rounded-xl p-[2px] overflow-hidden">
     <span

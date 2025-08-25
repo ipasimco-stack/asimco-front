@@ -78,15 +78,23 @@ export const Header = () => {
                                         <div className="bg-white rounded-xl p-4 w-[800px] mt-8 flex" style={{ boxShadow: "0 0 20px 0px #efefef" }}>
                                             <div className="w-1/3 border-l-1 flex flex-col gap-2 border-[#0505050f]">
                                                 {categories.map((cat, i) => (
-                                                    <div
-                                                        key={`${cat.name}-${i + 1}`}
-                                                        onMouseEnter={() => setSelectedCategory(cat.name)}
-                                                        className={`p-2 cursor-pointer hover:bg-gray-100 ${selectedCategory === cat.name ? "font-bold bg-gray-100 text-blue-600" : ""
-                                                            }`}
-                                                    >
-                                                        {cat.name}
-                                                    </div>
+                                                    <>
+                                                        <div
+                                                            key={`${cat.name}-${i + 1}`}
+                                                            onMouseEnter={() => setSelectedCategory(cat.name)}
+                                                            className={`p-2 cursor-pointer hover:bg-gray-100 ${selectedCategory === cat.name ? "font-bold bg-gray-100 text-blue-600" : ""
+                                                                }`}
+                                                        >
+                                                            {cat.name}
+                                                        </div>
+                                                    </>
                                                 ))}
+                                                
+                                                        <div className="p-2">
+                                                            <Link href={"products"} >
+                                                                همه محصولات
+                                                            </Link>
+                                                        </div>
                                             </div>
 
                                             <div className="w-2/3 pr-4">
