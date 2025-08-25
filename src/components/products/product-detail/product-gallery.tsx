@@ -1,8 +1,8 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React, { useState } from "react";
 
 interface ProductGalleryProps {
-  images: string[];
+  images: string[] | StaticImageData[];
 }
 
 const ProductGallery: React.FC<ProductGalleryProps> = ({ images }) => {

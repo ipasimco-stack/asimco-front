@@ -4,6 +4,7 @@ import ProductReviews from "@/components/products/product-detail/product-reviews
 import ProductSpecs from "@/components/products/product-detail/product-specs";
 import RelatedProducts from "@/components/products/product-detail/related-products";
 import React from "react";
+import productImage from '../../../public/images/product-image.webp'
 
 const ProductDetailsPage: React.FC = () => {
     const product = {
@@ -13,10 +14,10 @@ const ProductDetailsPage: React.FC = () => {
         description: "این محصول نمونه‌ای برای تست می‌باشد",
         rating: 4,
         images: [
-            "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp",
-            "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp",
-            "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp",
-            "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp",
+            productImage,
+            productImage,
+            productImage,
+            productImage
         ],
         specs: [
             { key: "وزن", value: "1 کیلوگرم" },
@@ -26,9 +27,9 @@ const ProductDetailsPage: React.FC = () => {
     };
 
     const relatedProducts = [
-        { id: 2, name: "محصول مرتبط 1", price: 200000, image: "https://via.placeholder.com/250x200" },
-        { id: 3, name: "محصول مرتبط 2", price: 150000, image: "https://via.placeholder.com/250x200" },
-        { id: 4, name: "محصول مرتبط 3", price: 400000, image: "https://via.placeholder.com/250x200" },
+        { id: 2, name: "محصول مرتبط 1", price: 200000, image: productImage },
+        { id: 3, name: "محصول مرتبط 2", price: 150000, image: productImage },
+        { id: 4, name: "محصول مرتبط 3", price: 400000, image: productImage },
     ];
 
     return (

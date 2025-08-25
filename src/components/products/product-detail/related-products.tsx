@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "antd";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 const { Meta } = Card;
 
@@ -8,7 +8,7 @@ interface Product {
     id: number;
     name: string;
     price: number;
-    image: string;
+    image: string | StaticImageData;
 }
 
 interface RelatedProductsProps {

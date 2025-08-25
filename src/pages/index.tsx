@@ -9,6 +9,7 @@ import arrow_down from "../../public/images/double-down-arrow.png";
 import server_box from "../../public/images/box-server-2.png"
 import { Divider } from "antd";
 import Link from "next/link";
+import ProductImage from "../../public/images/product-image.webp"
 import ProductConfigCard, { ProductConfigProps } from "@/components/landing/product-config-card";
 
 const categories = [
@@ -68,21 +69,21 @@ const features = [
 ];
 
 const products1 = [
-  { name: "Intel Xeon", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
-  { name: "AMD EPYC", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
-  { name: "Ryzen 9", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
-  { name: "Intel Xeon", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
-  { name: "AMD EPYC", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
-  { name: "Ryzen 9", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
-  { name: "Intel Xeon", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
-  { name: "AMD EPYC", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
-  { name: "Ryzen 9", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
+  { name: "Intel Xeon", img: ProductImage },
+  { name: "AMD EPYC", img: ProductImage },
+  { name: "Ryzen 9", img: ProductImage },
+  { name: "Intel Xeon", img: ProductImage },
+  { name: "AMD EPYC", img: ProductImage },
+  { name: "Ryzen 9", img: ProductImage },
+  { name: "Intel Xeon", img: ProductImage },
+  { name: "AMD EPYC", img: ProductImage },
+  { name: "Ryzen 9", img: ProductImage },
 ];
 
 const configs: ProductConfigProps[] = [
   {
     title: "کانفیگ حرفه‌ای گیمینگ",
-    image: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp",
+    image: ProductImage,
     items: [
       { type: "cpu", name: "Intel i7" },
       { type: "ram", name: "16GB DDR4" },
@@ -90,11 +91,10 @@ const configs: ProductConfigProps[] = [
     ],
     originalPrice: 55000000,
     discountPrice: 48900000,
-    key: 1,
   },
   {
     title: "سیستم اداری اقتصادی",
-    image: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp",
+    image: ProductImage,
     items: [
       { type: "cpu", name: "Intel i5" },
       { type: "ram", name: "8GB DDR4" },
@@ -102,11 +102,10 @@ const configs: ProductConfigProps[] = [
     ],
     originalPrice: 22000000,
     discountPrice: 19900000,
-    key: 2,
   },
   {
     title: "ورک‌استیشن طراحی",
-    image: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp",
+    image: ProductImage,
     items: [
       { type: "cpu", name: "AMD Ryzen 9" },
       { type: "ram", name: "32GB DDR5" },
@@ -114,7 +113,6 @@ const configs: ProductConfigProps[] = [
     ],
     originalPrice: 98000000,
     discountPrice: 89900000,
-    key: 3,
   },
 ];
 
@@ -261,7 +259,7 @@ export default function HomePage() {
                     <Image
                       width={100}
                       height={100}
-                      src={`https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp`}
+                      src={ProductImage}
                       alt={item}
                       className="h-24 md:h-32 object-contain mx-auto mb-2"
                     />
@@ -373,9 +371,7 @@ export default function HomePage() {
         <div className="py-12">
           <div className="flex flex-col md:flex-row gap-6">
             {configs.map((config, i) => (
-              <div key={config.title + i}>
-                <ProductConfigCard  {...config} />
-              </div>
+              <ProductConfigCard key={config.title + i}  {...config} />
             ))}
           </div>
         </div>
@@ -404,7 +400,7 @@ export default function HomePage() {
                     <Image
                       width={100}
                       height={100}
-                      src={`https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp`}
+                      src={ProductImage}
                       alt={item}
                       className="h-24 md:h-32 object-contain mx-auto mb-2"
                     />

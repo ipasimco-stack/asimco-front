@@ -7,7 +7,7 @@ import { SearchInput } from "./search-input";
 import Button from "./button";
 import { v4 as uuidv4 } from 'uuid';
 import arrow_down from "../../../public/images/down-arrow.png";
-
+import logo from '../../../public/images/asimco-logo.png'
 
 export const Header = () => {
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -33,7 +33,7 @@ export const Header = () => {
                 <div>
                     <Link href={"/"}>
                         <Image
-                            src={'https://asimco.ir/wp-content/uploads/2020/02/asimco-logo12.png'}
+                            src={logo}
                             width={100}
                             height={90}
                             alt="logo asim / لوگو کارا شبکه آسیم" />

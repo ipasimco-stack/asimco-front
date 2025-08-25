@@ -3,7 +3,7 @@ import React from "react";
 import { Card, Tag } from "antd";
 import { motion } from "framer-motion";
 import { Cpu, HardDrive, MemoryStick } from "lucide-react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface ConfigItem {
   type: "cpu" | "ram" | "hard";
@@ -17,11 +17,10 @@ interface ConfigItem {
 
 export interface ProductConfigProps {
   title: string;
-  image: string;
+  image: string | StaticImageData;
   items: ConfigItem[];
   originalPrice: number;
   discountPrice: number;
-  key: number;
 }
 
 const icons = {
@@ -46,8 +45,8 @@ const ProductConfigCard: React.FC<ProductConfigProps> = ({
         hoverable
         cover={
           <Image
-            width={100}
-            height={100}
+            width={500}
+            height={500}
             alt={title}
             src={image}
             className="h-52 object-cover rounded-t-xl"
