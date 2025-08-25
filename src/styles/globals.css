@@ -41,11 +41,6 @@ ul {
   margin: 10px auto !important;
 }
 
-.ant-input-affix-wrapper {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-}
-
 .bg-blobs {
   background: white;
   position: absolute;
@@ -61,4 +56,13 @@ ul {
     radial-gradient(circle at 0% 30%, rgba(170, 0, 255, 0.131), transparent 10%),
     radial-gradient(circle at 100% 50%, rgba(170, 0, 255, 0.131), transparent 10%),
     radial-gradient(circle at 50% 90%, rgba(170, 0, 255, 0.131), transparent 10%),
+}
+
+:where(.css-dev-only-do-not-override-l9pxc0).ant-input {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+:where(.css-dev-only-do-not-override-l9pxc0).ant-select-single {
+  height: 45px !important;
 }

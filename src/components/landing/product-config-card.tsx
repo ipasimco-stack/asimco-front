@@ -63,7 +63,7 @@ const ProductConfigCard: React.FC<ProductConfigProps> = ({
           ))}
         </div>
 
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex justify-between items-end mb-4">
           <div>
             <p className="line-through text-gray-300 text-sm">
               {originalPrice.toLocaleString()} تومان

@@ -14,7 +14,7 @@ const ContactPage: React.FC = () => {
     };
 
     return (
-        <section className="w-full min-h-screen c_container !mt-[220px]">
+        <section className="w-full min-h-screen c_container !mt-[220px] !mb-[50px]">
             <Divider orientation="left" orientationMargin={0} className="!font-bold !mb-10">
                 اطلاعات تماس
             </Divider>

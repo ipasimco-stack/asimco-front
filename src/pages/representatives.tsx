@@ -53,7 +53,7 @@ export default function Representatives() {
   ];
 
   return (
-    <div className="c_container !mt-[220px]">
+    <div className="c_container !mt-[220px] !mb-[50px]">
       <Divider
         orientation="left"
         orientationMargin={0}
