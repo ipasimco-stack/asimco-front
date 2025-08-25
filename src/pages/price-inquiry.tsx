@@ -5,10 +5,23 @@ import { UploadOutlined } from "@ant-design/icons";
 const { TextArea } = Input;
 const { Option } = Select;
 
-const PriceInquiry: React.FC = () => {
-    const [form] = Form.useForm();
+interface PriceInquiryFormValues {
+    fullname: string;
+    organization?: string;
+    organizationType: "دولتی" | "نیمه دولتی" | "خصوصی";
+    mobile: string;
+    email?: string;
+    specs?: string;
+    description?: string;
+    upload?: {
+        fileList: File[];
+    };
+}
 
-    const handleFinish = (values: any) => {
+const PriceInquiry: React.FC = () => {
+    const [form] = Form.useForm<PriceInquiryFormValues>();
+
+    const handleFinish = (values: PriceInquiryFormValues) => {
         console.log("Form Values:", values);
         message.success("اطلاعات شما با موفقیت ثبت شد");
         form.resetFields();
@@ -20,7 +33,12 @@ const PriceInquiry: React.FC = () => {
                 فرم استعلام قیمت
             </Divider>
 
-            <Form form={form} layout="vertical" className="!mt-12" onFinish={handleFinish}>
+            <Form<PriceInquiryFormValues>
+                form={form}
+                layout="vertical"
+                className="!mt-12"
+                onFinish={handleFinish}
+            >
                 <Row gutter={16}>
                     <Col xs={24} md={12}>
                         <Form.Item
@@ -87,7 +105,6 @@ const PriceInquiry: React.FC = () => {
                 <Form.Item label="توضیحات تکمیلی" name="description">
                     <TextArea rows={3} placeholder="توضیحات تکمیلی" />
                 </Form.Item>
-
 
                 <Form.Item label="آپلود فایل یا عکس" name="upload">
                     <Upload beforeUpload={() => false} accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">

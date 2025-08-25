@@ -7,9 +7,18 @@ import Button from "@/components/shared/button";
 const { TextArea } = Input;
 
 const ContactPage: React.FC = () => {
+
+    interface ContactFormValues {
+        fullname: string;
+        email: string;
+        phone: string;
+        subject: string;
+        message: string;
+    }
+
     const [form] = Form.useForm();
 
-    const handleSubmit = (values: any) => {
+    const handleSubmit = (values: ContactFormValues) => {
         console.log("فرم ارسال شد:", values);
     };
 

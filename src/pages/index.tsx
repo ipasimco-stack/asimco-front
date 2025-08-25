@@ -372,8 +372,10 @@ export default function HomePage() {
 
         <div className="py-12">
           <div className="flex flex-col md:flex-row gap-6">
-            {configs.map((config) => (
-              <ProductConfigCard {...config} />
+            {configs.map((config, i) => (
+              <div key={config.title + i}>
+                <ProductConfigCard  {...config} />
+              </div>
             ))}
           </div>
         </div>

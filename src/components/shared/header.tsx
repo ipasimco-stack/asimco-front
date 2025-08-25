@@ -128,8 +128,8 @@ export const Header = () => {
                                 </Dropdown>
                             </li>
                             {
-                                pages.map((page) => {
-                                    return <li>
+                                pages.map((page, i) => {
+                                    return <li key={page.title + i}>
                                         <Link href={page.route}>
                                             {page.title}
                                         </Link>

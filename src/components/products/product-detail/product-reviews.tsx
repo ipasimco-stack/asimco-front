@@ -7,13 +7,18 @@ interface Review {
   rating: number;
 }
 
+interface ReviewFormValues {
+  rating: number;
+  comment: string;
+}
+
 const ProductReviews: React.FC = () => {
   const [reviews, setReviews] = useState<Review[]>([
     { author: "کاربر ۱", content: "خیلی خوب بود", rating: 5 },
   ]);
   const [form] = Form.useForm();
 
-  const handleSubmit = (values: any) => {
+  const handleSubmit = (values: ReviewFormValues) => {
     setReviews([
       { author: "شما", content: values.comment, rating: values.rating },
       ...reviews,
