@@ -103,7 +103,7 @@ const products1 = [
 
 const configs: ProductConfigProps[] = [
   {
-    title: "پکیج حرفه‌ای گیمینگ",
+    title: "کانفیگ حرفه‌ای گیمینگ",
     image: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp",
     items: [
       { type: "cpu", name: "Intel i7" },
@@ -399,7 +399,7 @@ export default function HomePage() {
 
         </Divider>
 
-        <div className="container mx-auto py-12 px-4">
+        <div className="py-12">
           <div className="flex flex-col md:flex-row gap-6">
             {configs.map((config, idx) => (
               <ProductConfigCard {...config} />
