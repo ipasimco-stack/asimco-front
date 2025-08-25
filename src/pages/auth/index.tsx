@@ -51,16 +51,6 @@ export default function AuthPage() {
                         <FcGoogle size={22} />
                         <span>ادامه با گوگل</span>
                     </button>
-
-                    <p className="text-center text-sm text-gray-600 !mt-5">
-                        {isLogin ? "حساب کاربری ندارید؟" : "قبلاً ثبت‌نام کرده‌اید؟"}{" "}
-                        <button
-                            className="text-blue-600 font-semibold"
-                            onClick={() => setIsLogin(!isLogin)}
-                        >
-                            {isLogin ? "ثبت‌نام کنید" : "وارد شوید"}
-                        </button>
-                    </p>
                 </motion.div>
             </div>
         </div>

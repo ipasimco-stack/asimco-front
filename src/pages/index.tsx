@@ -12,6 +12,7 @@ import { Divider, Tabs, TabsProps, theme } from "antd";
 import StickyBox from 'react-sticky-box';
 import { v4 as uuidv4 } from 'uuid';
 import Link from "next/link";
+import ProductConfigCard, { ProductConfigProps } from "@/components/landing/product-config-card";
 
 const categories = [
   {
@@ -99,6 +100,46 @@ const products1 = [
   { name: "AMD EPYC", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
   { name: "Ryzen 9", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
 ];
+
+const configs: ProductConfigProps[] = [
+  {
+    title: "پکیج حرفه‌ای گیمینگ",
+    image: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp",
+    items: [
+      { type: "cpu", name: "Intel i7" },
+      { type: "ram", name: "16GB DDR4" },
+      { type: "hard", name: "1TB SSD NVMe" },
+    ],
+    originalPrice: 55000000,
+    discountPrice: 48900000,
+    key: 1,
+  },
+  {
+    title: "سیستم اداری اقتصادی",
+    image: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp",
+    items: [
+      { type: "cpu", name: "Intel i5" },
+      { type: "ram", name: "8GB DDR4" },
+      { type: "hard", name: "512GB SSD" },
+    ],
+    originalPrice: 22000000,
+    discountPrice: 19900000,
+    key: 2,
+  },
+  {
+    title: "ورک‌استیشن طراحی",
+    image: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp",
+    items: [
+      { type: "cpu", name: "AMD Ryzen 9" },
+      { type: "ram", name: "32GB DDR5" },
+      { type: "hard", name: "2TB SSD + 4TB HDD" },
+    ],
+    originalPrice: 98000000,
+    discountPrice: 89900000,
+    key: 3,
+  },
+];
+
 
 const AnimatedCTA = ({ gradient }: { gradient?: "a" | "b" }) => (
   <a href="/products" className="group relative inline-flex items-center justify-center rounded-xl p-[2px] overflow-hidden">
@@ -354,14 +395,17 @@ export default function HomePage() {
 
       <section className="c_container !my-12">
         <Divider orientation="left" orientationMargin={0} className="!font-bold">
-          کانفیگ ها
+          جشنواره ویژه پیکج‌های کانفیگ
+
         </Divider>
 
-        <Tabs defaultActiveKey="1" className="!mt-12" renderTabBar={renderTabBar} items={[{
-          label: `کانفیگ اول`,
-          key: uuidv4(),
-          children: `تست متن تب`,
-        }]} />
+        <div className="container mx-auto py-12 px-4">
+          <div className="flex flex-col md:flex-row gap-6">
+            {configs.map((config, idx) => (
+              <ProductConfigCard {...config} />
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="px-6 md:px-16 py-12 space-y-12 bg-purple-100">
