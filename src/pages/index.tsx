@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -8,9 +7,7 @@ import Image from "next/image";
 import server_image from "../../public/images/server-3.png";
 import arrow_down from "../../public/images/double-down-arrow.png";
 import server_box from "../../public/images/box-server-2.png"
-import { Divider, Tabs, TabsProps, theme } from "antd";
-import StickyBox from 'react-sticky-box';
-import { v4 as uuidv4 } from 'uuid';
+import { Divider } from "antd";
 import Link from "next/link";
 import ProductConfigCard, { ProductConfigProps } from "@/components/landing/product-config-card";
 
@@ -70,25 +67,6 @@ const features = [
   },
 ];
 
-const faqs = [
-  {
-    q: "چگونه می‌توانم بهترین سرور را انتخاب کنم؟",
-    a: "با توجه به نیاز پردازشی و فضای ذخیره‌سازی، ما راهنمای انتخاب سرور را ارائه می‌کنیم.",
-  },
-  {
-    q: "آیا امکان ارتقای سخت‌افزار سرورها وجود دارد؟",
-    a: "بله، تمامی سرورها قابلیت ارتقا قطعات و حافظه را دارند.",
-  },
-  {
-    q: "پشتیبانی چگونه ارائه می‌شود؟",
-    a: "پشتیبانی 24/7 از طریق تلفن، چت آنلاین و ایمیل ارائه می‌شود.",
-  },
-  {
-    q: "سرورها از کدام دیتاسنترها ارائه می‌شوند؟",
-    a: "از بهترین دیتاسنترهای داخلی و خارجی با بالاترین کیفیت.",
-  },
-];
-
 const products1 = [
   { name: "Intel Xeon", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
   { name: "AMD EPYC", img: "https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp" },
@@ -142,7 +120,7 @@ const configs: ProductConfigProps[] = [
 
 
 const AnimatedCTA = ({ gradient }: { gradient?: "a" | "b" }) => (
-  <a href="/products" className="group relative inline-flex items-center justify-center rounded-xl p-[2px] overflow-hidden">
+  <Link href="/products" className="group relative inline-flex items-center justify-center rounded-xl p-[2px] overflow-hidden">
     <span
       className={`pointer-events-none absolute inset-[-150%] rounded-xl ${gradient === "b"
         ? "bg-[conic-gradient(from_0deg,_#6366f1_0%,_#a855f7_40%,_#ec4899_70%,_#6366f1_100%)]"
@@ -158,23 +136,12 @@ const AnimatedCTA = ({ gradient }: { gradient?: "a" | "b" }) => (
       <span className="pointer-events-none absolute -left-10 top-0 h-full w-10 skew-x-12 bg-white/25 blur-sm opacity-0 group-hover:opacity-100 group-hover:animate-sheen" />
     </span>
     <span className="relative z-0 block rounded-xl bg-purple-900/20 backdrop-blur-md" />
-  </a>
+  </Link>
 );
 
 
 
 export default function HomePage() {
-  const [activeFAQ, setActiveFAQ] = useState<number | null>(null);
-
-
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken();
-  const renderTabBar: TabsProps['renderTabBar'] = (props, DefaultTabBar) => (
-    <StickyBox offsetTop={64} offsetBottom={20} style={{ zIndex: 1 }}>
-      <DefaultTabBar {...props} style={{ background: colorBgContainer }} />
-    </StickyBox>
-  );
 
   return (
     <div className="w-full">
@@ -291,7 +258,9 @@ export default function HomePage() {
               {cat.items.map((item, j) => (
                 <SwiperSlide key={j}>
                   <div className="bg-white shadow-md rounded-2xl cursor-pointer p-4 text-center hover:shadow-xl transition">
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src={`https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp`}
                       alt={item}
                       className="h-24 md:h-32 object-contain mx-auto mb-2"
@@ -343,7 +312,9 @@ export default function HomePage() {
               {products1.map((p, i) => (
                 <SwiperSlide key={i} className="bg-white rounded-lg cursor-pointer">
                   <div className="!text-purple-900 rounded-xl shadow-md p-4 flex flex-col items-center">
-                    <img src={p.img} alt={p.name} className="h-20 mb-3" />
+                    <Image
+                      width={100}
+                      height={100} src={p.img} alt={p.name} className="h-20 mb-3" />
                     <h3 className="font-semibold">{p.name}</h3>
                   </div>
                 </SwiperSlide>
@@ -383,7 +354,7 @@ export default function HomePage() {
               {products1.map((p, i) => (
                 <SwiperSlide key={i} className="bg-white rounded-lg cursor-pointer">
                   <div className="!text-purple-900 rounded-xl shadow-md p-4 flex flex-col items-center">
-                    <img src={p.img} alt={p.name} className="h-20 mb-3" />
+                    <Image width={100} height={100} src={p.img} alt={p.name} className="h-20 mb-3" />
                     <h3 className="font-semibold">{p.name}</h3>
                   </div>
                 </SwiperSlide>
@@ -401,7 +372,7 @@ export default function HomePage() {
 
         <div className="py-12">
           <div className="flex flex-col md:flex-row gap-6">
-            {configs.map((config, idx) => (
+            {configs.map((config) => (
               <ProductConfigCard {...config} />
             ))}
           </div>
@@ -428,7 +399,9 @@ export default function HomePage() {
               {cat.items.map((item, j) => (
                 <SwiperSlide key={j}>
                   <div className="bg-white shadow-md rounded-2xl cursor-pointer p-4 text-center hover:shadow-xl transition">
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src={`https://dobrka.com/2861-home_default/%D8%B3%D8%B1%D9%88%D8%B1-hpe-proliant-dl145-gen11.webp`}
                       alt={item}
                       className="h-24 md:h-32 object-contain mx-auto mb-2"

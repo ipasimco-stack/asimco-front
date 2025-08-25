@@ -19,6 +19,7 @@ export const Header = () => {
         { name: "انواع Server", items: ["Server G10", "Server G9", "Server G8", "Server G10", "Server G9", "Server G8", "Server G8", "Server G10", "Server G9", "Server G8"] },
     ];
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [pages, setPages] = useState([
         { title: "استعلام قیمت", route: "/price-inquiry" },
         { title: "نمایندگان کارا شبکه آسیم", route: "/representatives" },

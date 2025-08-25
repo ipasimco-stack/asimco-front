@@ -1,5 +1,4 @@
-import { Avatar, Divider, Segmented } from "antd";
-import { UserOutlined } from '@ant-design/icons';
+import { Divider } from "antd";
 import CyclicalCounter from "@/utils/cyclical-counter";
 import TeamSection from "@/components/about-us/team-box";
 

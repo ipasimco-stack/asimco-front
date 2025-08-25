@@ -1,5 +1,5 @@
 import React from "react";
-import { Select, Slider } from "antd";
+import { Select} from "antd";
 
 const { Option } = Select;
 
@@ -10,7 +10,6 @@ interface FilterSidebarProps {
 
 const FilterSidebar: React.FC<FilterSidebarProps> = ({
   onCategoryChange,
-  onPriceChange,
 }) => {
   return (
     <div className="bg-white shadow rounded-xl p-4 flex flex-col gap-6">

@@ -5,6 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 export default function AuthPage() {
     const [isLogin, setIsLogin] = useState(true);
 
+
     return (
         <div className="c_container !mt-[220px]">
             <div className="flex items-center justify-center">
@@ -43,7 +44,7 @@ export default function AuthPage() {
                         </div>
                     )}
 
-                    <button className="w-full bg-purple-600 !text-white p-3 rounded-xl font-semibold hover:bg-purple-700 transition mb-4">
+                    <button onClick={() => setIsLogin(false)} className="w-full bg-purple-600 !text-white p-3 rounded-xl font-semibold hover:bg-purple-700 transition mb-4">
                         {isLogin ? "ورود" : "ثبت‌نام"}
                     </button>
 

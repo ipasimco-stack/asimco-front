@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
-import { Card, Button, Tag } from "antd";
+import { Card, Tag } from "antd";
 import { motion } from "framer-motion";
 import { Cpu, HardDrive, MemoryStick } from "lucide-react";
+import Image from "next/image";
 
 interface ConfigItem {
   type: "cpu" | "ram" | "hard";
@@ -44,7 +45,9 @@ const ProductConfigCard: React.FC<ProductConfigProps> = ({
       <Card
         hoverable
         cover={
-          <img
+          <Image
+            width={100}
+            height={100}
             alt={title}
             src={image}
             className="h-52 object-cover rounded-t-xl"
