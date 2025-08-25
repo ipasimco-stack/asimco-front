@@ -11,6 +11,7 @@ import server_box from "../../public/images/box-server-2.png"
 import { Divider, Tabs, TabsProps, theme } from "antd";
 import StickyBox from 'react-sticky-box';
 import { v4 as uuidv4 } from 'uuid';
+import Link from "next/link";
 
 const categories = [
   {
@@ -166,7 +167,9 @@ export default function HomePage() {
 
             <div className="flex justify-center md:justify-start gap-4 flex-wrap mt-9 animate-fadeIn delay-1000">
               <button className="bg-purple-600 hover:bg-purple-500 text-white px-10 py-5 rounded-md font-bold shadow-lg transition-transform transform hover:scale-105">
-                مشاوره رایگان
+                <Link href={"/consultation"}>
+                  مشاوره رایگان
+                </Link>
               </button>
             </div>
           </div>

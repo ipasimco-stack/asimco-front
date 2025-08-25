@@ -49,7 +49,9 @@ export const Header = () => {
                     </Button>
 
                     <Button variant="outline">
-                        مشاوره
+                        <Link href={"/consultation"}>
+                            مشاوره
+                        </Link>
                     </Button>
                 </div>
             </div>
