@@ -89,12 +89,12 @@ export const Header = () => {
                                                         </div>
                                                     </>
                                                 ))}
-                                                
-                                                        <div className="p-2">
-                                                            <Link href={"products"} >
-                                                                همه محصولات
-                                                            </Link>
-                                                        </div>
+
+                                                <div className={`${!selectedCategory && 'p-2 cursor-pointer hover:bg-gray-100 font-bold bg-gray-100 text-blue-600'}`}>
+                                                    <Link href={"products"} >
+                                                        همه محصولات
+                                                    </Link>
+                                                </div>
                                             </div>
 
                                             <div className="w-2/3 pr-4">
