@@ -20,8 +20,7 @@ export const Header = () => {
     ];
 
     const [pages, setPages] = useState([
-        { title: "استعلام قیمت", route: "/" },
-        // { title: "مقالات", route: "/" },
+        { title: "استعلام قیمت", route: "/price-inquiry" },
         { title: "نمایندگان کارا شبکه آسیم", route: "/representatives" },
         { title: "تماس با ما", route: "/contact-us" },
         { title: "درباره ما", route: "/about-us" }
